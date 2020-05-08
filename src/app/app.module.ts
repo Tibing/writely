@@ -2,10 +2,12 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
+import { WorkingAreaDirective } from './working-area.directive';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    WorkingAreaDirective
   ],
   imports: [
     BrowserModule
