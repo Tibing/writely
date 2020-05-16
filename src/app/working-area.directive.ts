@@ -1,19 +1,20 @@
 import { Directive, ElementRef } from '@angular/core';
+import { Doc, Editor } from 'codemirror';
 
+import { CodeMirrorService } from './code-mirror';
+import { WelcomeWordsService } from './welcome-words/welcome-words.service';
 
-declare var CodeMirror: any;
 
 @Directive({ selector: '[appWorkingArea]' })
 export class WorkingAreaDirective {
 
-  constructor(private elementRef: ElementRef) {
-    const editor: HTMLTextAreaElement = this.elementRef.nativeElement;
-    const mirror = CodeMirror.fromTextArea(editor, {
-      mode: 'gfm',
-      keyMap: 'vim',
-      showMarkdownLineBreaks: true,
-      lineWrapping: true,
-    });
-    mirror.getDoc().setValue();
+  constructor(elementRef: ElementRef,
+              codeMirror: CodeMirrorService,
+              welcomeWords: WelcomeWordsService) {
+    const textArea: HTMLTextAreaElement = elementRef.nativeElement;
+    const editor: Editor = codeMirror.createEditor(textArea);
+    const doc: Doc = editor.getDoc();
+
+    welcomeWords.sayWelcomeWord(doc);
   }
 }
