@@ -28,5 +28,40 @@
   .CodeMirror {
     border: none;
     height: 100%;
+    font-family: 'Raleway', sans-serif;
+  }
+
+  .cm-s-default .cm-header {
+    color: var(--blue);
+  }
+
+  .cm-header-1 {
+    font-size: 48px;
+    font-weight: 300;
+  }
+
+  .cm-header-2 {
+    font-size: 40px;
+    font-weight: normal;
+  }
+
+  .cm-header-3 {
+    font-size: 32px;
+    font-weight: normal;
+  }
+
+  .cm-header-4 {
+    font-size: 24px;
+    font-weight: normal;
+  }
+
+  .cm-header-5 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  .cm-header-6 {
+    font-size: 18px;
+    font-weight: 500;
   }
 }

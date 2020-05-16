@@ -11,7 +11,9 @@ export class WorkingAreaDirective {
     const mirror = CodeMirror.fromTextArea(editor, {
       mode: 'gfm',
       keyMap: 'vim',
+      showMarkdownLineBreaks: true,
+      lineWrapping: true,
     });
-    mirror.getDoc().setValue('### Type some markdown here....');
+    mirror.getDoc().setValue();
   }
 }
